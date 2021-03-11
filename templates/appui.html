@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Breast Cancer API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="style2.css">
+<style type="text/css">
+  body {
+    background-color: #800000  ;
+    color: 	#FFFAFA; }
+  </style>
+  
+</head>
+
+<body>
+ <div class="login">
+    <h1 style= "margin-left:410px; text-decoration: underline;">BREAST CANCER PREDICTION</h1>
+    <h2 style = "margin-left: 40px;">Breast cancer is cancer that develops from breast tissue. Breast cancer most commonly presents as a lump that feels different from the rest of the breast tissue. Researchers have identified hormonal, lifestyle and environmental factors that may increase your risk of breast cancer. But it's not clear why some people who have no risk factors develop cancer, yet other people with risk factors never do. It's likely that breast cancer is caused by a complex interaction of your genetic makeup and your environment.</h2>
+    <h2 style = "margin-left: 40px;">So here, Logistic Regression Model has been created to detect if the tumor is benign(non cancerous) or malignant(cancerous) from the the provided features of tumor.</h2>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post" style= "margin-left:500px;">
+    	<input type="text" name="Radius mean" placeholder="Radius mean" required="required" size="25" />
+      <br>
+      <br>
+      <input type="text" name="Texture Mean" placeholder="Texture Mean" required="required" size="25" />
+      <br>
+      <br>
+      <input type="text" name="Area Mean" placeholder="Area Mean" required="required" size="25" />
+      <br>
+      <br>
+      <input type="text" name="Concavity Mean" placeholder="Concavity Mean" required="required" size="25" />
+      <br>
+      <br>
+      <input type="text" name="Area SE" placeholder="Area SE" required="required" size="25" />
+      <br>
+      <br>
+      <input type="text" name="Concavity SE" placeholder="Concavity SE" required="required" size="25" />
+      <br>
+      <br>
+      <input type="text" name="Fractal Dimension SE" placeholder="Fractal Dimension SE" required="required" size="25" />
+      <br>
+      <br>
+      <input type="text" name="Smoothness Worst" placeholder="Smoothness Worst" required="required" size="25" />
+      <br>
+      <br>
+      <input type="text" name="Concavity Worst" placeholder="Concavity Worst" required="required" size="25" />
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary btn-block btn-large" style= "padding: 8px 22px;text-align:center;">PREDICT</button>
+    </form>
+  
+   <h2 style = "margin-left: 500px;">
+   {{ prediction_text }}
+   </h2>
+
+   
+
+ </div>
+</body>
+</html>
