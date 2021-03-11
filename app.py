@@ -21,11 +21,11 @@ def predict():
 
     output = prediction[0]
 
-    #return render_template('appui.html', prediction_text='Predicted Class:  {}'.format(output))
-    if output == 1:
-      return render_template('appui.html', prediction_text='Danger! you have to take care of yourself. Tumor is Malignant{}')
-    else:
-     return render_template('appui.html', prediction_text=' Great, you need not to worry. Tumor is Benign {}')
+    return render_template('appui.html', prediction_text='Predicted Class:  {}'.format(output))
+    #if output == 1:
+     # return render_template('appui.html', prediction_text='Danger! you have to take care of yourself. Tumor is Malignant{}')
+    #else:
+     #return render_template('appui.html', prediction_text=' Great, you need not to worry. Tumor is Benign {}')
 
 
 @app.route('/results',methods=['POST'])
